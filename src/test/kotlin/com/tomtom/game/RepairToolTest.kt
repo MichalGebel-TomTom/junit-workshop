@@ -1,6 +1,7 @@
 package com.tomtom.game
 
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
 
@@ -14,6 +15,6 @@ class RepairToolTest {
         LOW_MORALE -> LOW_MORALE"""
     )
     fun `repair conditions`(beginState: FellowshipState, expectedState: FellowshipState) {
-        Assertions.assertEquals(expectedState, useRepairTools(beginState))
+        assertEquals(expectedState, useRepairTools(beginState))
     }
 }

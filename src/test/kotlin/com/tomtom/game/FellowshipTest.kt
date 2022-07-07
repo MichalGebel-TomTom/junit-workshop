@@ -1,7 +1,6 @@
 package com.tomtom.game
 
-import com.tomtom.game.CombatResult.DEFEAT
-import com.tomtom.game.CombatResult.VICTORY
+import com.tomtom.game.CombatResult.*
 import com.tomtom.game.FellowshipState.RESTED
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -25,9 +24,9 @@ internal class FellowshipTest {
     @Test
     fun `when fellowship is equally strong to their enemies then should return DRAW`() {
         val heroes = fellowship(listOf(hero(level = 10), hero(level = 8)))
-        val enemies = fellowship(listOf(enemy(level = 9), enemy(level = 8)))
+        val enemies = fellowship(listOf(enemy(level = 10), enemy(level = 8)))
 
-        assertEquals(VICTORY, heroes.combat(enemies))
+        assertEquals(DRAW, heroes.combat(enemies))
     }
 
     @Test

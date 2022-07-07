@@ -2,8 +2,7 @@ package com.tomtom.game
 
 import io.mockk.every
 import io.mockk.mockk
-import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
 
@@ -20,6 +19,7 @@ class GuildTest {
         val members = mockk<Fellowship>()
         val enemies = mockk<Fellowship>()
         every { members.combat(enemies) } returns combatResult
+
         val guild = Guild(members)
 
         val result = guild.completeTask(enemies)

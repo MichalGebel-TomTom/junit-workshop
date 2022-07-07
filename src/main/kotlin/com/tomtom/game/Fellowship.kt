@@ -19,6 +19,11 @@ class Fellowship(
             } else if (fellowshipStrength == enemiesStrength) {
                 DRAW
             } else {
+                when (state) {
+                    RESTED -> state = LOW_MORALE
+                    LOW_MORALE -> state = EXHAUSTED
+                    else -> state
+                }
                 DEFEAT
             }
         } else {
